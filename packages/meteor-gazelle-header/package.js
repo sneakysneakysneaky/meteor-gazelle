@@ -10,6 +10,10 @@ Package.onUse(function (api) {
   api.versionsFrom('1.1.0.2');
 
   var packages = [
+    'jquery',
+    'reactive-var',
+    'underscore',
+    'maxharris9:classnames',
     'meteor-gazelle:lib'
   ];
 

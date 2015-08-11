@@ -1,5 +1,5 @@
 <template name="header">
-  <header class="main-header" role="banner">
+  <header class="{{classNames}}" role="banner">
     <div class="main-header__container">
       <h1 class="main-title">
         <a class="main-title__link" href="/home">{{siteName}}</a>
@@ -8,5 +8,10 @@
       {{>nav}}
     </div>
     {{>secondaryNav}}
+
+    <div class="{{stickyContainerClassNames}}">
+      {{>nav}}
+      {{>searchBox showButton=true placeholder="Search Torrents"}}
+    </div>
   </header>
 </template>

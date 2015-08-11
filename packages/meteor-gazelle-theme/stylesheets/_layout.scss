@@ -50,20 +50,38 @@ em strong {
   }
 }
 
+%main-header__container {
+  $_color-border: #909193;
+
+  @extend %header-footer-background;
+  @include dark-box;
+  @include fill-parent;
+  @include clearfix;
+
+  border: {
+    bottom: 1px solid $_color-border;
+  }
+
+  padding: {
+    left: $layout-gutter;
+    right: $layout-gutter;
+  }
+}
+
 .main-header {
+  $__sticky-container: #{&}__sticky-container;
+  $__sticky-container--animating: #{$__sticky-container}--animating;
+
+  position: relative;
+  z-index: 20;
+
   &__container {
-    $_color-border: #909193;
+    @extend %main-header__container;
 
-    @extend %header-footer-background;
-    @include dark-box;
-    @include fill-parent;
-    @include clearfix;
-
-    border: {
-      bottom: 1px solid $_color-border;
+    padding: {
+      bottom: 0;
+      top: 1.5em;
     }
-
-    padding: 1.5em $layout-gutter 0;
   }
 
   .main-nav {
@@ -101,6 +119,46 @@ em strong {
       &:hover {
         color: $color-text-emphasis;
       }
+    }
+  }
+
+  #{$__sticky-container} {
+    @extend %main-header__container;
+    @include slide-start;
+
+    left: 0;
+
+    padding: {
+      bottom: 0.625em;
+      top: 0.625em;
+    }
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    .main-nav__item {
+      padding: {
+        bottom: 0;
+      }
+    }
+
+    .search-box {
+      float: right;
+    }
+  }
+
+  #{$__sticky-container--animating} {
+    @include slide-up;
+  }
+
+  &--sticky {
+    #{$__sticky-container} {
+      @include slide-stop;
+    }
+
+    #{$__sticky-container--animating} {
+      @include slide-down;
     }
   }
 }
@@ -380,6 +438,8 @@ em strong {
   text: {
     align: center;
   }
+
+  z-index: 10;
 
   .main-nav {
     margin: 1.5em 0;

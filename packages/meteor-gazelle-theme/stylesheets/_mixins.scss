@@ -64,16 +64,12 @@
   }
 }
 
-%slide-down {
+@mixin slide-down {
   @extend %slide-base;
 
   animation: {
     name: slide-down;
   }
-}
-
-@mixin slide-down {
-  @extend %slide-down;
 }
 
 @keyframes slide-up {
@@ -86,7 +82,7 @@
   }
 }
 
-%slide-up {
+@mixin slide-up {
   @extend %slide-base;
 
   animation: {
@@ -94,10 +90,6 @@
   }
 
   opacity: 0;
-}
-
-@mixin slide-up {
-  @extend %slide-up;
 }
 
 %dropdown-menu-base {
