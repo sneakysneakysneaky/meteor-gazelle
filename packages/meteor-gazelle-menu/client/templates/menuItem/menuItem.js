@@ -1,6 +1,9 @@
 Template.menuItem.helpers({
   children: getChildren,
   hasChildren: hasChildren,
+  badgeCount: getBadgeCount,
+  hasBadgeCount: hasBadgeCount,
+
   title: function () { return getMenuItem().title; },
   url: function () { return getMenuItem().url; },
 
@@ -19,6 +22,7 @@ Template.menuItem.helpers({
     result[prefix + '--submenu'] = hasChildren();
     result[prefix + '--animating'] = isAnimating;
     result[prefix + '--expanded'] = isExpanded;
+    result[prefix + '--badge-count'] = hasBadgeCount();
 
     return classNames(result);
   },
@@ -29,6 +33,10 @@ Template.menuItem.helpers({
 
   submenuClassNames: function () {
     return getCssPrefix() + '__submenu';
+  },
+
+  badgeCountClassNames: function () {
+    return getCssPrefix() + '__badge-count';
   }
 });
 
@@ -60,6 +68,21 @@ function getMenuItem () {
 
 function getChildren () {
   return getMenuItemNode().children;
+}
+
+function getBadgeCount (menuItemNode) {
+  menuItemNode = menuItemNode || getMenuItemNode();
+  var result = menuItemNode.menuItem.reactiveBadgeCount.get();
+
+  menuItemNode.children.forEach(function (childNode) {
+    result += getBadgeCount(childNode);
+  });
+
+  return result;
+}
+
+function hasBadgeCount () {
+  return Template.currentData().showBadges && getBadgeCount() > 0;
 }
 
 function getCssPrefix () {

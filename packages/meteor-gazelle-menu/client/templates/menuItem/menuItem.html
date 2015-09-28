@@ -2,13 +2,19 @@
   <li class={{classNames}}>
     <a class={{linkClassNames}} href={{url}}>{{title}}</a>
 
+    {{#if hasBadgeCount}}
+      <div class={{badgeCountClassNames}}>{{badgeCount}}</div>
+    {{/if}}
+
     {{#if hasChildren}}
       <div class={{submenuClassNames}}>
         {{> menuList items=children
                      depth=childDepth
                      maxDepth=maxDepth
-                     cssClassPrefix=cssClassPrefix}}
+                     cssClassPrefix=cssClassPrefix
+                     showBadges=showBadges}}
       </div>
     {{/if}}
   </li>
 </template>
+ 

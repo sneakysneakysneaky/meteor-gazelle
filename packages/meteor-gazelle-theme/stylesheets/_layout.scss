@@ -50,6 +50,37 @@ em strong {
   }
 }
 
+%main-nav__badge-count {
+  background: $color-text-emphasis;
+
+  border: {
+    color: $color-white;
+    radius: 0.75em;
+    style: solid;
+    width: 2px;
+  }
+
+  box: {
+    shadow: 0 0 1px $color-black;
+  }
+
+  font: {
+    size: $font-size-small;
+    weight: bold;
+  }
+
+  line-height: 1.5;
+  min-width: 1.75em;
+  position: absolute;
+  right: -1rem;
+
+  text: {
+    align: center;
+  }
+
+  top: -0.5em;
+}
+
 .main-nav {
   $__level1: #{&}__level1;
   $__level1__item: #{$__level1}__item;
@@ -121,6 +152,12 @@ em strong {
     @include slide-down;
   }
 
+  @for $i from 1 through 3 {
+    &__level#{$i}__badge-count {
+      @extend %main-nav__badge-count;
+    }
+  }
+
   #{$__level2} {
     @include dropdown-menu;
 
@@ -138,6 +175,17 @@ em strong {
   #{$__level3} {
     &__item {
       @include dropdown-menu-item;
+      position: relative;
+
+      &--badge-count {
+        padding: {
+          right: 1rem;
+        }
+      }
+    }
+
+    &__badge-count {
+      right: 0;
     }
   }
 }

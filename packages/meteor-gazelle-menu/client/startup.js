@@ -13,7 +13,8 @@ Meteor.startup(function () {
       menuId: 'main-nav',
       title: 'Torrents',
       url: '/torrents',
-      priority: 10
+      priority: 10,
+      badgeCount: 3
     }),
 
     new Gazelle.Menu.MenuItem({
@@ -21,6 +22,15 @@ Meteor.startup(function () {
       parentId: 'eba88e7f-0704-402d-abbf-88ad24745462',
       title: 'All Torrents',
       url: '/torrents/all',
+      priority: 10,
+      badgeCount: 1
+    }),
+
+    new Gazelle.Menu.MenuItem({
+      id: '67c13bf7-9c3f-4f10-8124-7a3214b70f3d',
+      parentId: '17ae7615-c055-478f-b823-78b3a74c09a7',
+      title: 'Music',
+      url: '/torrents/music',
       priority: 10
     }),
 

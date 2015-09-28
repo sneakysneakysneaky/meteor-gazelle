@@ -1,3 +1,4 @@
+
 Template.menu.helpers({
   maxDepth: function () { return Template.instance().maxDepth; },
   cssClassPrefix: function () { return Template.instance().cssClassPrefix; },

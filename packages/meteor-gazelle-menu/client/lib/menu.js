@@ -170,6 +170,12 @@ function MenuItem (params) {
       enumerable: true,
       get: function () { return reactiveBadgeCount.get(); },
       set: function (value) { reactiveBadgeCount.set(value); }
+    },
+
+    reactiveBadgeCount: {
+      enumerable: false,
+      writable: false,
+      value: reactiveBadgeCount
     }
   });
 }
