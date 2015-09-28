@@ -1,0 +1,10 @@
+<template name="menuList">
+  <ul class={{classNames}}>
+    {{#each items}}
+      {{> menuItem menuItemNode=this
+                   depth=../depth
+                   maxDepth=../maxDepth
+                   cssClassPrefix=../cssClassPrefix}}
+    {{/each}}
+  </ul>
+</template>

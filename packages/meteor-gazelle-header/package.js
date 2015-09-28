@@ -14,7 +14,9 @@ Package.onUse(function (api) {
     'jquery@1.11.3_2',
     'reactive-var@1.0.5',
     'underscore@1.0.3',
-    'maxharris9:classnames@0.0.1'
+    'maxharris9:classnames@0.0.1',
+    'meteor-gazelle:lib@0.0.1',
+    'meteor-gazelle:menu@0.0.1'
   ];
 
   api.use(packages);
@@ -26,20 +28,12 @@ Package.onUse(function (api) {
   ], ['client', 'server']);
 
   api.addFiles([
-    'lib/client/nav/nav.html',
-    'lib/client/nav/nav.js',
-    'lib/client/navItem/navItem.html',
-    'lib/client/navItem/navItem.js',
-    'lib/client/navMenu/navMenu.html',
-    'lib/client/navMenu/navMenu.js',
     'lib/client/userMenu/userMenu.html',
     'lib/client/userMenu/userMenu.js',
     'lib/client/header/header.html',
     'lib/client/header/header.js',
     'lib/client/searchBox/searchBox.html',
-    'lib/client/searchBox/searchBox.js',
-    'lib/client/secondaryNav/secondaryNav.html',
-    'lib/client/secondaryNav/secondaryNav.js'
+    'lib/client/searchBox/searchBox.js'
   ], ['client']);
 
 });

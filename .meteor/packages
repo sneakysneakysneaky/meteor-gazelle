@@ -24,4 +24,5 @@ meteor-gazelle:home
 meteor-gazelle:theme
 sanjo:jasmine
 velocity:html-reporter
+meteor-gazelle:menu
 useraccounts:iron-routing

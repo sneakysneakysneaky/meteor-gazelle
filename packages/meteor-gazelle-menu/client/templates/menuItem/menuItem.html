@@ -1,0 +1,14 @@
+<template name="menuItem">
+  <li class={{classNames}}>
+    <a class={{linkClassNames}} href={{url}}>{{title}}</a>
+
+    {{#if hasChildren}}
+      <div class={{submenuClassNames}}>
+        {{> menuList items=children
+                     depth=childDepth
+                     maxDepth=maxDepth
+                     cssClassPrefix=cssClassPrefix}}
+      </div>
+    {{/if}}
+  </li>
+</template>
