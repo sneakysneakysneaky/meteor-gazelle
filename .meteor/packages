@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 aldeed:autoform
 aldeed:collection2
 aldeed:simple-schema
@@ -25,3 +24,16 @@ meteor-gazelle:theme
 sanjo:jasmine
 velocity:html-reporter
 useraccounts:iron-routing
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check

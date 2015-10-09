@@ -1,6 +1,6 @@
-@import 'bourbon';
-@import 'neat';
-@import 'normalize';
+@import '../.npm/package/node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../.npm/package/node_modules/bourbon-neat/app/assets/stylesheets/neat';
+@import '../.npm/package/node_modules/node-normalize-scss/normalize';
 @import 'variables';
 @import 'mixins';
 @import 'fonts';
